@@ -1,9 +1,12 @@
-.container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+.firstDeck {
   height: 100vh;
 }
-.container img {
+.firstDeck ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 32px;
+}
+.firstDeck ul img {
   width: 60px;
 }
 

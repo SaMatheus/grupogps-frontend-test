@@ -10,7 +10,8 @@ const Magic = () => {
   const [deck, setDeck] = useState([]);
 
   const [isShuffle, setIsShuffle] = useState(false);
-  const [isSelect, setIsSelect] = useState(false);
+  const [cardSelect, setCardSelect] = useState(false);
+  const [columnSelect, setColumnSelect] = useState(false);
 
   // PEGANDO O DECK INICIAL
   useEffect(() => {
@@ -18,11 +19,6 @@ const Magic = () => {
     localStorage.clear('card_code');
     getDeck();
   }, []);
-
-  useEffect(() => {
-    setIsShuffle(true);
-    shuffleDeck();
-  }, [isSelect]);
 
   const getDeck = async () => {
     api.get(`new/draw/?count=21`).then((response) => {
@@ -36,6 +32,20 @@ const Magic = () => {
     });
   };
 
+  // EMBARALHANDO O DECK
+  useEffect(() => {
+    setIsShuffle(true);
+    shuffleDeck();
+  }, [cardSelect, columnSelect]);
+
+  const shuffleDeck = async () => {
+    const getCardCode = localStorage.getItem('card_code');
+    api.get(`new/shuffle/?cards=${getCardCode}`).then((response) => {
+      getNewDeck(response.data.deck_id);
+    });
+  };
+
+  // PEGANDO UM DECK EMBARALHADO COM AS CARTAS SETADAS DO PRIMEIRO DECK
   const getNewDeck = async (cardId) => {
     api.get(`${cardId}/draw/?count=21`).then((response) => {
       if (isShuffle) {
@@ -44,31 +54,80 @@ const Magic = () => {
     });
   };
 
-  const shuffleDeck = async () => {
-    const getCardCode = localStorage.getItem('card_code');
-    api.get(`new/shuffle/?cards=${getCardCode}`).then((response) => {
-      console.log(response);
-      getNewDeck(response.data.deck_id);
-    });
-  };
-
   const handleCardSelect = (code) => {
-    setIsSelect(!isSelect);
+    setCardSelect(true);
+
+    if (!localStorage.hasOwnProperty('card_chosen')) {
+      localStorage.setItem('card_chosen', code);
+    }
   };
 
   return (
     <div className={styles.container}>
-      {deck.map((item) => {
-        return (
-          <li key={item.code}>
-            <img
-              src={item.image}
-              alt={item.code}
-              onClick={() => handleCardSelect(item.code)}
-            />
-          </li>
-        );
-      })}
+      <div className={styles.firstDeck}>
+        <ul onClick={() => setColumnSelect(!columnSelect)}>
+          {deck.map((item, index) => {
+            return (
+              <li
+                key={index}
+                onClick={() => {
+                  handleCardSelect(item.code);
+                }}
+              >
+                <img src={item.image} alt={item.code} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      {/* {!isShuffle ? (
+  //       <div className={styles.firstDeck}>
+  //         {deck.map((item, index) => {
+  //           return (
+  //             <li
+  //               key={index}
+  //               onClick={() => {
+  //                 handleCardSelect(item.code);
+  //                 console.log(index);
+  //               }}
+  //             >
+  //               <img src={item.image} alt={item.code} />
+  //             </li>
+  //           );
+  //         })}
+  //       </div>
+  //     ) : (
+  //       <div className={styles.secondDeck}>
+  //         {deck.map((item, index) => {
+  //           return (
+  //             <li
+  //               key={index}
+  //               onClick={() => {
+  //                 handleCardSelect(item.code);
+  //                 console.log(index);
+  //               }}
+  //             >
+  //               <img src={item.image} alt={item.code} />
+  //             </li>
+  //           );
+  //         })}
+  //       </div>
+  //     )} */}
+      {/* <div className={styles.thirdDeck}>
+  //       {deck.map((item, index) => {
+  //         return (
+  //           <li
+  //             key={index}
+  //             onClick={() => {
+  //               handleCardSelect(item.code);
+  //               console.log(index);
+  //             }}
+  //           >
+  //             <img src={item.image} alt={item.code} />
+  //           </li>
+  //         );
+  //       })}
+  //     </div> */}
     </div>
   );
 };
