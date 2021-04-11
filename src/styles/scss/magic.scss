@@ -1,0 +1,10 @@
+.container {
+  // Box Model
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100vh;
+
+  img {
+    width: 60px;
+  }
+}
