@@ -3,10 +3,22 @@ import React, { useState, useEffect } from 'react';
 // STYLES
 import styles from '../../styles/css/pages/Magic/Magic.module.css';
 
+// ICONS
+import { FaRegHandPointRight, FaPlay } from 'react-icons/fa';
+
+// COMPONENTS
+import MagicTable from '../../components/MagicTable';
+import Button from '../../components/Button';
+
+// ROUTER
+import { useHistory } from 'react-router-dom';
+
 // REQUEST
 import api from '../../services/api.js';
 
 const Magic = () => {
+  const history = useHistory();
+
   const [count, setCount] = useState(0);
 
   const [deck, setDeck] = useState([]);
@@ -23,10 +35,6 @@ const Magic = () => {
     localStorage.clear('card_code');
     getInitialDeck();
   }, []);
-
-  useEffect(() => {
-    memorizeDeck();
-  }, [deck]);
 
   const getInitialDeck = async () => {
     api.get(`new/draw/?count=21`).then((response) => {
@@ -50,7 +58,11 @@ const Magic = () => {
     });
   };
 
-  // MEMORIZANDO POSIÇÕES DAS CARTAS
+  // MEMORIZANDO CARTAS
+  useEffect(() => {
+    memorizeDeck();
+  }, [deck]);
+
   const memorizeDeck = () => {
     let newArr1 = [
       deck[0],
@@ -194,53 +206,99 @@ const Magic = () => {
     setCount(0);
   };
 
+  // RESETANDO MAGICA
+  const handleSelectReplayTheMagic = () => {
+    window.location.reload();
+  };
+
+  // REDIRECIONANDO PARA PAGINA PRINCIPAL
+  const handleSelectChooseOtherMagic = () => {
+    history.push('/');
+  };
+
   return (
-    <div className={styles.container}>
-      {deck.length !== 0 && (
-        <>
-          <ul>
-            <button onClick={firstRow}>Selecionar</button>
-            {deck.map((card, index) => {
-              while (index < 7) {
-                return (
-                  <li key={index}>
-                    <img src={card.image} alt='' />
-                    <span>{index}</span>
-                  </li>
-                );
-              }
-            })}
-          </ul>
-          <ul>
-            <button onClick={secondRow}>Selecionar</button>
-            {deck.map((card, index) => {
-              while (index > 6 && index < 14) {
-                return (
-                  <li key={index}>
-                    <img src={card.image} alt='' />
-                    <span>{index}</span>
-                  </li>
-                );
-              }
-            })}
-          </ul>
-          <ul>
-            <button onClick={thirdRow}>Selecionar</button>
-            {deck.map((card, index) => {
-              while (index > 13 && index < 22) {
-                return (
-                  <li key={index}>
-                    <img src={card.image} alt='' />
-                    <span>{index}</span>
-                  </li>
-                );
-              }
-            })}
-          </ul>
-        </>
-      )}
-      <span>{finish && <img src={chooseCard.image} alt='' />}</span>
-    </div>
+    <MagicTable>
+      <div className={styles.container}>
+        <div className={styles.instructionsBox}>
+          {deck.length !== 0 && count === 0 ? (
+            <h1>
+              Selecione uma carta.
+              <br />
+              Não me conte qual é, apenas me diga qual é a coluna que sua carta
+              se encontra clicando no botão!
+            </h1>
+          ) : count === 1 ? (
+            <h1>Muito bem! Mais uma vez.</h1>
+          ) : count === 2 ? (
+            <h1>Só mais uma vez.</h1>
+          ) : count === 3 ? (
+            <h1>Aha! Previsivel de mais, sua carta é: </h1>
+          ) : (
+            ''
+          )}
+        </div>
+        {deck.length !== 0 && !finish ? (
+          <div className={styles.deckGrid}>
+            <ul>
+              <button onClick={firstRow}>
+                <FaRegHandPointRight />
+              </button>
+              {deck.map((card, index) => {
+                while (index < 7) {
+                  return (
+                    <li key={index}>
+                      <img src={card.image} alt='' />
+                    </li>
+                  );
+                }
+              })}
+            </ul>
+            <ul>
+              <button onClick={secondRow}>
+                <FaRegHandPointRight />
+              </button>
+              {deck.map((card, index) => {
+                while (index > 6 && index < 14) {
+                  return (
+                    <li key={index}>
+                      <img src={card.image} alt='' />
+                    </li>
+                  );
+                }
+              })}
+            </ul>
+            <ul>
+              <button onClick={thirdRow}>
+                <FaRegHandPointRight />
+              </button>
+              {deck.map((card, index) => {
+                while (index > 13 && index < 22) {
+                  return (
+                    <li key={index}>
+                      <img src={card.image} alt='' />
+                    </li>
+                  );
+                }
+              })}
+            </ul>
+          </div>
+        ) : deck.length !== 0 && finish ? (
+          <>
+            <img src={chooseCard.image} alt='' className={styles.choosedCard} />
+            <div className={styles.finishedButtons}>
+              <Button onClick={handleSelectReplayTheMagic}>
+                Jogar Novamente
+              </Button>
+              <Button onClick={handleSelectChooseOtherMagic}>
+                Escolher outra Magica
+              </Button>
+            </div>
+          </>
+        ) : (
+          <h1>Embaralhando o Deck!</h1>
+        )}
+      </div>
+    </MagicTable>
   );
 };
 

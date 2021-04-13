@@ -21,7 +21,7 @@
   z-index: 0;
 }
 .illumination::before {
-  content: '';
+  content: "";
   height: 1100px;
   width: 1100px;
   border-radius: 50%;
@@ -38,10 +38,11 @@
   height: 80vh;
   width: 80vw;
   border-radius: 16px;
+  padding: 52px 46px;
   border: 7px double black;
   background: #0a0a0a;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
 .tableBorder1 {
@@ -52,7 +53,7 @@
   position: absolute;
 }
 .tableBorder1::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 20px;
   left: 20px;
@@ -63,10 +64,26 @@
   z-index: -1;
 }
 
+@media screen and (max-width: 1400px) {
+  .table {
+    padding: 38px;
+  }
+}
 @media screen and (max-width: 1080px) {
   .table {
     height: 95vh;
     width: 95vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 8px;
+    overflow-y: auto;
+  }
+
+  .table {
+    height: 100%;
+    padding: 24px;
   }
 }
 

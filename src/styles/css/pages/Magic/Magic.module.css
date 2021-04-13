@@ -1,18 +1,226 @@
 .container {
-  height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 16px 32px;
+  animation: all 0.5s linear;
+  z-index: 1;
+}
+.container h1 {
+  color: white;
+  text-align: center;
+  font-size: 26px;
+  letter-spacing: 2px;
+}
+
+.instructionsBox {
+  height: 20%;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.instructionsBox h1 {
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+.deckGrid {
+  height: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
-.container ul {
+.deckGrid button {
+  width: 50px;
+  height: 50px;
+  justify-self: center;
+  background: #02bb36;
+  border-radius: 4px;
+  border: 0 none;
+  color: white;
+  cursor: pointer;
+}
+.deckGrid button svg {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+}
+.deckGrid button:hover svg {
+  transform: translateX(5px);
+}
+.deckGrid ul {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   justify-content: center;
   align-items: center;
   list-style: none;
+  gap: 16px;
 }
-.container ul img {
+.deckGrid ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deckGrid ul li img {
   width: 60px;
+}
+
+.choosedCard {
+  width: 150px;
+}
+
+.finishedButtons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 1400px) {
+  .instructionsBox h1 {
+    font-size: 20px;
+  }
+
+  .deckGrid {
+    height: 70%;
+    width: 90%;
+    gap: 16px;
+  }
+  .deckGrid ul {
+    gap: 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .instructionsBox {
+    padding: 0 50px;
+  }
+}
+@media screen and (max-width: 840px) {
+  .instructionsBox {
+    height: 30%;
+    padding: 0;
+  }
+
+  .deckGrid {
+    height: 70%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .instructionsBox {
+    height: 30%;
+  }
+  .instructionsBox h1 {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .instructionsBox {
+    height: 30%;
+  }
+  .instructionsBox h1 {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .instructionsBox {
+    height: 30%;
+  }
+  .instructionsBox h1 {
+    font-size: 14px;
+  }
+
+  .deckGrid ul li img {
+    width: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 8px;
+  }
+
+  .deckGrid button {
+    height: 40px;
+    width: 40px;
+  }
+  .deckGrid button svg {
+    font-size: 20px;
+  }
+  .deckGrid ul li img {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .deckGrid button {
+    height: 30px;
+    width: 30px;
+  }
+  .deckGrid button svg {
+    font-size: 16px;
+  }
+  .deckGrid ul li img {
+    width: 30px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .instructionsBox {
+    height: 20%;
+  }
+  .instructionsBox h1 {
+    font-size: 14px;
+  }
+
+  .deckGrid {
+    height: 100%;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .deckGrid button {
+    transform: rotate(90deg);
+    height: 45px;
+  }
+  .deckGrid ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .deckGrid ul li img {
+    width: 45px;
+  }
+
+  .finishedButtons {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 380px) {
+  .instructionsBox h1 {
+    font-size: 12px;
+  }
+
+  .deckGrid button {
+    height: 40px;
+  }
+  .deckGrid ul li img {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .deckGrid button {
+    transform: rotate(90deg);
+    height: 30px;
+  }
+  .deckGrid ul li img {
+    width: 30px;
+  }
 }
 
 /*# sourceMappingURL=Magic.module.css.map */
