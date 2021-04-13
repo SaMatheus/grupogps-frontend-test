@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="https://magictricksgame.herokuapp.com/">
+    <img title="Visualizar aplicação" width="25%" src="/assets/presentation.png">
+  </a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center">
 
-## Available Scripts
+[Descrição](#desc) ✦ [Tecnologias](#tec) ✦ [Projeto](#Projeto) ✦ [Rodando localmente](#local) ✦ [Licença](#lic)
 
-In the project directory, you can run:
+<br>
 
-### `yarn start`
+</h4>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<br>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h2 id="desc">
+💟 Sobre o projeto
+</h2>
 
-### `yarn test`
+<p align="justify">
+O <b>Magic Tricks Game</b> é uma aplicação web com o intuito de divertir quem utiliza. A aplicação basicamente lê sua mente ao advinhar a carta que vocês escolheu!
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2 id="tec">
+🛸 Tecnologias
+</h2>
 
-### `yarn build`
+<a href="https://reactjs.org">
+ <img alt="reactjs" title="reactjs" src="https://img.shields.io/static/v1?label=React&message=Javascript%20library&style=social&logo=React&logoColor=0088CC" />
+</a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h2 id="Projeto">
+👔 Projeto
+</h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<a href="https://magictricksgame.herokuapp.com/">
+<img title="move.it" src="public/assets/presentation.png">
+</a>
+<h6 align="center">Clique na imagem para visualizar a aplicação</h6>
 
-### `yarn eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<h2>🖥 Capturas de tela</h2>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<table>
+  <tr align="center">
+    <td><h5>Escolhendo a carta</h5></td>
+    <td><h5>Selecionando linha</h5></td>
+    <td><h5>Descobrindo a carta</h5></td>
+  </tr>
+  <tr>
+    <td><img src="public/assets/1.png"></td>
+    <td><img src="public/assets/2.png"></td>
+    <td><img src="public/assets/3.png"></td>
+  </tr>
+  <tr>
+</table>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<br>
 
-## Learn More
+<h2 id="local">
+⚛ Rodando aplicação localmente
+</h2>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> **⚠ Atenção !** <br> Antes de prosseguir com o passo a passo abaixo você precisa ter instalado em sua máquina o gerenciador de pacote [Yarn](https://classic.yarnpkg.com/en/docs/install) e o [Git](https://git-scm.com).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
 
-### Code Splitting
+> 📝 Clonando o repositório e entrando no diretório criado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```shell
+git clone https://github.com/SaMatheus/grupogps-frontend-test.git && cd grupogps-frontend-test
+```
 
-### Analyzing the Bundle Size
+> 📝 Baixando / Instalando dependências.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```shell
+yarn install
+```
 
-### Making a Progressive Web App
+> 📝 Rodando Aplicação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```shell
+yarn dev
+```
 
-### Advanced Configuration
+> Pronto 🎉 se tudo ocorreu conforme o esperado 😁 a aplicação estará
+> rodando na porta 3000. Basta acessar o endereço no navegador
+> http://localhost:3000 e você verá a aplicação funcionando.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br>
 
-### Deployment
+<h2 id="lic">
+📃 Licença
+</h2>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Este projeto esta sobe a licença [MIT](./LICENSE).
 
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+created by [Matheus Sá](https://github.com/SaMatheus)
