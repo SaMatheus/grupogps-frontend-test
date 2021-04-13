@@ -1,7 +1,14 @@
 import React from 'react';
 
+// COMPONENTS
+import MagicTable from '../../components/MagicTable';
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <MagicTable>
+      <button>Começar</button>
+    </MagicTable>
+  );
 };
 
 export default Home;
