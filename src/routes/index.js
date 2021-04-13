@@ -13,7 +13,7 @@ const Routes = () => {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/magic' component={Magic} />
-        <Route path='*' component={() => <h1>Page not Found...</h1>} />
+        <Route path='*' component={() => <h1>Page in Development...</h1>} />
       </Switch>
     </BrowserRouter>
   );
