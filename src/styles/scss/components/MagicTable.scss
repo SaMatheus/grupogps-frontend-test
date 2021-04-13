@@ -1,0 +1,100 @@
+.container {
+  // Box Model
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  // Visual
+  background: linear-gradient(120deg, #62699f, #c0c6ef);
+
+  // Position
+  position: relative;
+  overflow: hidden;
+}
+
+.illumination {
+  // Box model
+  height: 1000px;
+  width: 1000px;
+  border-radius: 50%;
+
+  // Visual
+  background: #d1d4ea;
+
+  // Position
+  position: fixed;
+  top: -600px;
+  right: -1050px;
+  transform: translateX(-50%);
+  z-index: 0;
+
+  &::before {
+    // Box model
+    content: '';
+    height: 1100px;
+    width: 1100px;
+    border-radius: 50%;
+
+    // Visual
+    background: #d1d4ea5d;
+
+    // Position
+    position: absolute;
+    top: -50px;
+    right: -50px;
+  }
+}
+
+.table {
+  // Box Model
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 80vw;
+  border-radius: 16px;
+
+  // Visual
+  border: 7px double black; // uso o border double para dar a impressão que a mesa tem um chanfro / \ <- Assim!
+  background: #0a0a0a;
+
+  // Position
+  position: relative;
+  z-index: 1;
+}
+
+.tableBorder1 {
+  // Box Model
+  height: 90%;
+  width: 95%;
+  border-radius: 32px;
+
+  // Visual
+  border: 3px groove rgb(34, 34, 34);
+
+  // Position
+  position: absolute;
+
+  &::before {
+    content: '';
+    // Position
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 3px ridge rgb(34, 34, 34);
+    border-radius: inherit;
+    z-index: -1;
+  }
+}
+
+// RESPONSIVIDADE MOBILE
+@media screen and (max-width: 1080px) {
+  .table {
+    height: 95vh;
+    width: 95vw;
+  }
+}

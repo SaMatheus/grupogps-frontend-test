@@ -1,3 +1,73 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #62699f, #c0c6ef);
+  position: relative;
+  overflow: hidden;
+}
 
+.illumination {
+  height: 1000px;
+  width: 1000px;
+  border-radius: 50%;
+  background: #d1d4ea;
+  position: fixed;
+  top: -600px;
+  right: -1050px;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+.illumination::before {
+  content: "";
+  height: 1100px;
+  width: 1100px;
+  border-radius: 50%;
+  background: #d1d4ea5d;
+  position: absolute;
+  top: -50px;
+  right: -50px;
+}
+
+.table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 80vw;
+  border-radius: 16px;
+  border: 7px double black;
+  background: #0a0a0a;
+  position: relative;
+  z-index: 1;
+}
+
+.tableBorder1 {
+  height: 90%;
+  width: 95%;
+  border-radius: 32px;
+  border: 3px groove #222222;
+  position: absolute;
+}
+.tableBorder1::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 3px ridge #222222;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1080px) {
+  .table {
+    height: 95vh;
+    width: 95vw;
+  }
+}
 
 /*# sourceMappingURL=MagicTable.module.css.map */
