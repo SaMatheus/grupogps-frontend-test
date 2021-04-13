@@ -1,26 +1,19 @@
-.firstDeck {
+.container {
   // Box Model
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 
   ul {
+    // Box Model
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0 32px;
-
+    grid-template-columns: repeat(8, 1fr);
+    justify-content: center;
+    align-items: center;
+    list-style: none;
     img {
       width: 60px;
     }
   }
 }
-
-// .secondDeck {
-//   // Box Model
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   gap: 0 32px;
-//   height: 100vh;
-
-//   img {
-//     width: 60px;
-//   }
-// }

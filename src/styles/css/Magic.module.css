@@ -1,12 +1,17 @@
-.firstDeck {
+.container {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
-.firstDeck ul {
+.container ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0 32px;
+  grid-template-columns: repeat(8, 1fr);
+  justify-content: center;
+  align-items: center;
+  list-style: none;
 }
-.firstDeck ul img {
+.container ul img {
   width: 60px;
 }
 
