@@ -12,6 +12,7 @@
   h1 {
     // Tipography
     text-transform: uppercase;
+    text-align: center;
 
     // Visual
     color: white;
@@ -32,6 +33,30 @@
       align-items: center;
       justify-content: center;
       height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    h1 {
+      font-size: 26px;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .content {
+    h1 {
+      font-size: 22px;
+    }
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .content {
+    h1 {
+      font-size: 20px;
     }
   }
 }
