@@ -1,0 +1,38 @@
+.content {
+  // Box model
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+
+  // Position
+  z-index: 100;
+
+  h1 {
+    // Tipography
+    text-transform: uppercase;
+
+    // Visual
+    color: white;
+  }
+
+  ul {
+    // Box Model
+    height: 50%;
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    // Visual
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+}

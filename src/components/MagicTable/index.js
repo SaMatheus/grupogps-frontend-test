@@ -1,7 +1,7 @@
 import React from 'react';
 
 // STYLES
-import styles from '../../styles/css/components/MagicTable.module.css';
+import styles from '../../styles/css/components/MagicTable/MagicTable.module.css';
 
 const MagicTable = ({ children }) => {
   return (

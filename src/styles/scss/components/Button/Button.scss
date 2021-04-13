@@ -1,0 +1,23 @@
+.container {
+  // Box Model
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 32px;
+  min-width: 200px;
+  padding: 8px 0;
+  border-radius: 4px;
+
+  // Visual
+  background: #02bb36;
+  border: 2px groove #015519;
+  color: white;
+  cursor: pointer;
+
+  // Tipography
+  text-transform: capitalize;
+
+  &:active {
+    border: 1px ridge #015519;
+  }
+}

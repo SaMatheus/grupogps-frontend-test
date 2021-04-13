@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // STYLES
-import styles from '../../styles/css/pages/Magic.module.css';
+import styles from '../../styles/css/pages/Magic/Magic.module.css';
 
 // REQUEST
 import api from '../../services/api.js';

@@ -1,0 +1,28 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.content h1 {
+  text-transform: uppercase;
+  color: white;
+}
+.content ul {
+  height: 50%;
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  list-style: none;
+}
+.content ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/*# sourceMappingURL=Home.module.css.map */
